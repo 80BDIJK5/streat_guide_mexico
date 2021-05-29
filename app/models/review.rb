@@ -4,5 +4,5 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :comment, presence: true
   validates :rating, presence: true, inclusion: { in: 1..5 }
-  # has_many_attached :photos
+  has_many_attached :photos
 end
