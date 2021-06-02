@@ -1,4 +1,4 @@
-.card-product {
+.review-card {
   overflow: hidden;
   width: 80%;
   height: 80px;
@@ -11,18 +11,18 @@
   margin-bottom: 5px;
 }
 
-.card-product img {
+.review-card img {
   object-fit: cover;
   margin-right: 10px;
 }
 
-.card-product h2 {
+.review-card h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.review-card p {
   font-size: 12px;
   line-height: 1.3;
   opacity: .7;
@@ -30,7 +30,7 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
+.review-card .review-card-product-infos {
   padding: 16px;
 }
 .checked {
