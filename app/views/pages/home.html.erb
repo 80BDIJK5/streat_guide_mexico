@@ -1,6 +1,37 @@
-<div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c4.wallpaperflare.com/wallpaper/1005/1000/931/delicious-pizza-pepperoni-pizza-wallpaper-preview.jpg);">
+  <div class="container">
+    <h1>StrEAT Guide Mexico</h1>
+    <p>Change your life and learn to code at <br>one of our campuses around the world.</p>
+  </div>
 </div>
 
 
+
+  <div class="row">
+    <div class="col-sm-8 ml-10 ">
+    <h1>Trending today:</h1>
+      <div class="card-container">
+        <%= render 'shared/stallcard' %>
+        <%= render 'shared/stallcard' %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+    <h1>Latest reviews</h1>
+<div class="card-product">
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>
+      <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+    </p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+  </div>
+  <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
+</div>
+    </div>
+  </div>
