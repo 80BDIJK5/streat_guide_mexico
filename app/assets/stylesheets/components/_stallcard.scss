@@ -1,0 +1,43 @@
+.stall-card {
+  overflow: hidden;
+  background: white;
+  margin-right: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.stall-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.stall-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.stall-card  p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.stall-card  .stall-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.stall-card .checked {
+  color: orange;
+}
+
+.image {
+  position: relative;
+  text-align: center;
+  color: white;
+}
