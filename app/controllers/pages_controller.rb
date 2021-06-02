@@ -4,7 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
-  def compTest
 
+  def compTest
+  
+  end
+  def bob
   end
 end

@@ -1,0 +1,38 @@
+.btn-header {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 3px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.btn-header:hover {
+  opacity: 1;
+}
+
+.btn-main {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 3px;
+  background: #006636;
+  transition: background 0.3s ease;
+}
+
+.btn-main:hover {
+  background: #00B862;
+  color: white;
+}
+
+.btn-second {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 3px;
+  background: #5C5C5C;
+  transition: background 0.3s ease;
+}
+
+.btn-second:hover {
+  background: #8F8F8F;
+  color: white;
+}
