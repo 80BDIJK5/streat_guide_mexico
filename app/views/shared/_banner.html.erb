@@ -1,6 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c4.wallpaperflare.com/wallpaper/1005/1000/931/delicious-pizza-pepperoni-pizza-wallpaper-preview.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1584208632869-05fa2b2a5934?);">
   <div class="container">
     <h1>StrEAT Guide Mexico</h1>
-    <p>Change your life and learn to code at <br>one of our campuses around the world.</p>
+    <p>Explore hidden gems Mexico's amazing cuisine <br>created by food lovers like you.</p>
+
+    <%= form_tag stalls_path, method: :get, class: 'search-container' do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-field", style: 'height: 42px',
+        placeholder: "What are you craving today?"
+      %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-field", style: 'height: 42px',
+        placeholder: "Where are you located?"
+      %>
+        <%= submit_tag "Search", class: "btn btn-main" %>
+    <% end %>
+
   </div>
 </div>
