@@ -5,7 +5,6 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
         5.times do
           usertest = User.create(
           email: Faker::Internet.email,
@@ -14,7 +13,7 @@ require "open-uri"
          # puts usertest.usernamer
           usertest.save!
         end
-
+        Stall.destroy_all
         10.times do
           stall = Stall.create(
           name: Faker::Restaurant.name,
