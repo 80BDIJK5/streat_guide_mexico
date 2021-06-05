@@ -1,7 +1,7 @@
-  <%= simple_form_for(stall) do |f| %>
+<%= simple_form_for(stall) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas], default: 'Tacos' %>
+    <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas] %>
     <%= f.input :services, :collection => %w[Drinks Seating Vegetarian Hygiene Takeout CardPayment Wifi], input_html: { multiple: true, class: 'select2' } %>
     <%= f.input :address %>
     <%=f.input :rating, input_html: { type: 'number', min: '1', max: '5' } %>

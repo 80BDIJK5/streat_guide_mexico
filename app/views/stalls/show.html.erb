@@ -28,10 +28,27 @@
     </div>
   </div>
   <br>
-  <h3 class="text-center">Wat others are talking about us?</h3>
-    <div id="stall-review-section">
-      <%= render partial: "shared/review-card" %>
-      <%= render partial: "shared/review-card" %>
-      <%= render partial: "shared/review-card" %>
-    </div>
+  <h3 class="text-center">What others are talking about us?</h3>
+  <% @stall.reviews.each do |review| %>
+    <div class="review-card">
+  <div class="review-card-product-infos">
+    <h2>
+      <%= review.title %>
+    </h2>
+    <p>
+      <% review.rating.times do |rating| %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <% ratingDelta = 5 - review.rating %>
+        <% ratingDelta.times do |time| %>
+          <span class="fa fa-star"></span>
+        <% end %>
+    </p>
+    <p>
+      <%= review.comment %>
+    </p>
+  </div>
+  <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
+</div>
+  <% end %>
 </div>
