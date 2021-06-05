@@ -1,17 +1,10 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-8">
-      <h1>ADD A NEW FOOD STALL</h1>
-        <%= simple_form_for [ @stall, @review ] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :comment %>
-          <%=f.input :rating, input_html: { type: 'number' } %>
-          <%= link_to "Submit a review", stall_path(@stall), class: 'btn btn-block btn-secondary' %>
-        <% end %>
+    <div class="col-xs-12 col-sm-8 col-lg-8 ">
+      <div class="form-design">
+        <h1>SUMBIT A REVIEW</h1>
+        <%= render "reviewform", stall: @stall %>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
