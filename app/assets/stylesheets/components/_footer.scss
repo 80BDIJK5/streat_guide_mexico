@@ -5,10 +5,11 @@
   justify-content: space-between;
   padding: 0.5rem 1rem;
   color: rgba(0,0,0,0.3);
-  position: fixed;
+  position: relative;
   height: 50px;
   bottom: 0;
   width: 100%;
+  margin-top: 50px;
 }
 .footer-links {
   display: flex;
