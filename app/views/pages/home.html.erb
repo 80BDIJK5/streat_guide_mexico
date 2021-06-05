@@ -4,8 +4,8 @@
   <div class="col-sm-7 pl-5 pt-3">
   <h1>Trending today</h1>
     <div class="card-container">
-      <% 2.times do |time| %>
-      <%= render partial: "shared/stallcard" %>
+      <% Stall.all.first(2).each do |stall| %>
+      <%= render partial: "shared/stallcard", locals: {stall: stall} %>
     <% end %>
     </div>
   </div>
