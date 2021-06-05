@@ -18,25 +18,10 @@
   </div>
 
   <div class="index-separate">
-  <div class="card-container">
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
-      <div class= "card-singular">
-        <%= render 'shared/stallcard' %>
-      </div>
+  <div class="card-container-index">
+      <% @stalls.first(6).each do |stall| %>
+      <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+    <% end %>
   </div>
 
   <div class="map-image">

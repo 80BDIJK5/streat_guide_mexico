@@ -20,7 +20,7 @@
 
 .index-separate {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: auto auto;
   padding: 0.5rem 1rem;
 }
 
@@ -35,6 +35,18 @@ h1 {
 }
 
 body {
-  height: 100vh;
+  height: 120vh;
   margin: 0px;
 }
+
+
+.card-container-index {
+  display: grid;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  margin-bottom: 12px;
+  grid-template-columns: 20em 20em;
+  grid-template-rows: auto auto;
+ }
+

@@ -3,7 +3,8 @@ class StallsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "name ILIKE :query OR category ILIKE :query OR description ILIKE '%#{:query}%' "
+      sql_query = "name ILIKE :query OR
+      category ILIKE :query OR description ILIKE '%#{:query}%' "
       @stalls = Stall.where(sql_query, query: "%#{params[:query]}%")
     else
       @stalls = Stall.all
@@ -43,7 +44,7 @@ class StallsController < ApplicationController
   private
 
   def stall_params
-    params.require(:stall).permit(:name, :category, :description, :rating, :address, photos: [])
+    params.require(:stall).permit(:name, :category, :description, :rating, :address, :services [], photos: [])
   end
 
   def set_stall
