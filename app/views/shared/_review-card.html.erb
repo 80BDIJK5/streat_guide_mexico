@@ -1,12 +1,16 @@
 <div class="review-card">
   <div class="review-card-product-infos">
-    <h2>Product name</h2>
+    <h2>
+      <%= review.title %>
+    </h2>
     <p>
-      <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+      <% review.rating.times do |rating| %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <% ratingDelta = 5 - review.rating %>
+        <% ratingDelta.times do |time| %>
+          <span class="fa fa-star"></span>
+        <% end %>
     </p>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>

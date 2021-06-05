@@ -1,4 +1,4 @@
-  <%= simple_form_for(stall) do |f| %>
+<%= simple_form_for(stall) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas], default: 'Tacos' %>

@@ -9,11 +9,13 @@
     <div>
       <h2><%= stall.name %></h2>
       <p>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
+        <% @stall.rating.times do |rating| %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <% ratingDelta = 5 - @stall.rating %>
+        <% ratingDelta.times do |time| %>
+          <span class="fa fa-star"></span>
+        <% end %>
       </p>
       <p><%= stall.description %></p>
     </div>
