@@ -1,9 +1,10 @@
-<%= simple_form_for(stall) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas], default: 'Tacos' %>
-  <%= f.input :address %>
-  <%=f.input :rating, input_html: { type: 'number' } %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit 'Create', class: 'btn btn-block btn-primary'%>
-<% end %>
+  <%= simple_form_for(stall) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas], default: 'Tacos' %>
+    <%= f.input :services, :collection => %w[Drinks Seating Vegetarian Hygiene Takeout CardPayment Wifi], input_html: { multiple: true, class: 'select2' } %>
+    <%= f.input :address %>
+    <%=f.input :rating, input_html: { type: 'number', min: '1', max: '5' } %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit 'Create', class: 'btn btn-block btn-primary'%>
+  <% end %>
