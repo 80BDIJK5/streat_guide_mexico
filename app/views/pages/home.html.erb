@@ -11,29 +11,27 @@
   </div>
 
   <div class="col-sm-5 pr-5 pt-3">
-  <h1>Latest reviews</h1>
-    <% 2.times do |time| %>
-    <div class="review-card">
-  <div class="review-card-product-infos">
-      <h2>
-      <%= @stall.reviews.first.title %>
-    </h2>
-    <p>
-      <% @stall.reviews.first.rating.times do |rating| %>
-          <span class="fa fa-star checked"></span>
-        <% end %>
-        <% ratingDelta = 5 - @stall.reviews.first.rating %>
-        <% ratingDelta.times do |time| %>
-          <span class="fa fa-star"></span>
-        <% end %>
-    </p>
-    <p>
-      <%=@stall.reviews.first.comment %>
-    </p>
-  </div>
-  <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
-</div>
-
+    <h1>Latest reviews</h1>
+    <% @stall.reviews.limit(2).each do |review| %>
+      <div class="review-card">
+        <div class="review-card-product-infos">
+          <h2>
+            <%= review.title %>
+          </h2>
+          <p>
+            <% review.rating.times do |rating| %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <% ratingDelta = 5 - review.rating %>
+            <% ratingDelta.times do |time| %>
+              <span class="fa fa-star"></span>
+            <% end %>
+          </p>
+          <p>
+            <%= review.comment %>
+          </p>
+        </div>
+        <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
+      </div>
     <% end %>
   </div>
-</div>
