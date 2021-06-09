@@ -3,16 +3,11 @@
     <h1>StrEAT Guide Mexico</h1>
     <p>Explore hidden gems Mexico's amazing cuisine <br>created by food lovers like you.</p>
 
-    <%= form_tag stalls_path, method: :get, class: 'search-container' do %>
+    <%= form_tag stalls_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-field", style: 'height: 42px',
+        class: 'form-container',
         placeholder: "What are you craving today?"
-      %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-field", style: 'height: 42px',
-        placeholder: "Where are you located?"
       %>
         <%= submit_tag "Search", class: "btn btn-main" %>
     <% end %>

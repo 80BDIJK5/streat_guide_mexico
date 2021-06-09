@@ -1,4 +1,11 @@
 class Stall < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+                  against: [ :name, :description ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   has_many :reviews
   belongs_to :user
   validates :name, presence: true
