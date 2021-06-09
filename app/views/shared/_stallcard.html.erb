@@ -1,4 +1,4 @@
-  <% if stall.photos.attached? %>
+<% if stall.photos.attached? %>
   <div class="stall-card">
     <%= cl_image_tag stall.photos.first.key, crop: :fill, style: 'object-fit: cover;' %>
 <% else %>
@@ -7,7 +7,9 @@
 <% end %>
   <div class="stall-card-infos">
     <div>
-      <h2><%= stall.name %></h2>
+      <h2>
+        <%= link_to stall.name, stall_path(stall) %>
+      </h2>
       <p>
         <% stall.rating.times do |rating| %>
           <span class="fa fa-star checked"></span>

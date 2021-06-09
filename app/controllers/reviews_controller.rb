@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @stall = Stall.find(params[:stall_id])
     @review.stall = @stall
-    @review.user = @current_user
+    @review.user = current_user
     if @review.save
       redirect_to stall_path(@stall)
     else

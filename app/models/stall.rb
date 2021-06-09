@@ -1,4 +1,5 @@
 class Stall < ApplicationRecord
+  serialize :services
   has_many :reviews
   belongs_to :user
   validates :name, presence: true
