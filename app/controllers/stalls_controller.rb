@@ -44,7 +44,7 @@ class StallsController < ApplicationController
   private
 
   def stall_params
-    params.require(:stall).permit(:name, :category, :description, :rating, :address, :services [], photos: [])
+    params.require(:stall).permit(:name, :category, :description, :rating, :address, services: [], photos: [])
   end
 
   def set_stall
