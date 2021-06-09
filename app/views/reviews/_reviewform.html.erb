@@ -1,6 +1,6 @@
- <%= simple_form_for [ @stall, @review ] do |f| %>
-    <%= f.input :title %>
-    <%= f.input :comment %>
-    <%=f.input :rating, input_html: { type: 'number' } %>
-    <%= f.submit "Submit Review", class: 'btn btn-block btn-primary' %>
-  <% end %>
+<%= simple_form_for [ @stall, @review ] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :comment %>
+  <%=f.input :rating, input_html: { type: 'number' } %>
+  <%= f.submit "Submit Review", class: 'btn btn-block btn-main' %>
+<% end %>
