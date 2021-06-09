@@ -16,8 +16,17 @@
     <p>  Address: <%=@stall.address%> <p>
   <div>
     <h3>Services</h3>
-       <p><span class="fa fa-star">Wi-fi</span> </p>
-       <p><span class="fa fa-star">Seating 1</span> </p>
+    <% if @stall.services.nil? %>
+       <p><span class="fa fa-star">Spanish/English</span> </p>
+       <p><span class="fa fa-star">Best experience</span> </p>
+       <p><span class="fa fa-star">Debit/Credit cards</span> </p>
+    <% else %>
+      <% @stall.services.each do |service| %>
+        <p><span class="fa fa-star">
+            <%= service %>
+        </span> </p>
+        <% end %>
+      <% end %>
   </div>
   <div id= "buttons"class="d-flex flex-row justify-content-center">
     <div>
