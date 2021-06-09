@@ -1,8 +1,9 @@
 .banner {
-  background-size: cover;
-  background-position: center;
   padding: 150px 0;
   text-align: left;
+  background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+  background-image: url(street-tacos.jpg);
+  background-position: center;
 }
 
 .banner h1 {
@@ -15,6 +16,6 @@
 
 .banner p {
   font-size: 20px;
-  color: #d6d6d6;
+  color: $light-gray;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }

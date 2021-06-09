@@ -4,6 +4,7 @@
       <div class="form-design">
         <h1>SUMBIT A REVIEW</h1>
         <%= render "reviewform", stall: @stall %>
+        <%= link_to "Back to stall", stall_path(@stall), class: 'btn btn-block btn-second' %>
       </div>
     </div>
   </div>
