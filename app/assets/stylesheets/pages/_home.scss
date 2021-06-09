@@ -35,9 +35,20 @@ h1 {
 }
 
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
+  height: 100vh;
+}
+
+main {
+  min-height: 90vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 
 
@@ -51,3 +62,7 @@ body {
   grid-template-rows: auto auto;
  }
 
+
+.row {
+  width: 100%;
+}
