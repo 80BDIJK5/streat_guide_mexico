@@ -12,12 +12,21 @@
       <% end %>
   </div>
   <h3>About us: </h3>
-  <p><%= @stall.description %></p>
-  <p>  Address: <%=@stall.address%> <p>
+    <p><%= @stall.description %></p>
+    <p>  Address: <%=@stall.address%> <p>
   <div>
     <h3>Services</h3>
-       <p><span class="fa fa-star">Service 1</span> </p>
-       <p><span class="fa fa-star">Service 1</span> </p>
+    <% if @stall.services.nil? %>
+       <p><span class="fa fa-star">Spanish/English</span> </p>
+       <p><span class="fa fa-star">Best experience</span> </p>
+       <p><span class="fa fa-star">Debit/Credit cards</span> </p>
+    <% else %>
+      <% @stall.services.each do |service| %>
+        <p><span class="fa fa-star">
+            <%= service %>
+        </span> </p>
+        <% end %>
+      <% end %>
   </div>
   <div id= "buttons"class="d-flex flex-row justify-content-center">
     <div>
