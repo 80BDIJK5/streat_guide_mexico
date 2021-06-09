@@ -14,7 +14,7 @@ require "open-uri"
     usertest.save!
   end
   Stall.destroy_all
-  10.times do
+  20.times do
     stall = Stall.create(
     name: Faker::Restaurant.name,
     rating: rand(1..5),
@@ -22,7 +22,19 @@ require "open-uri"
     description: Faker::Quote.matz,
     address: Faker::Address.full_address
     )
-   #stall.user = User.all.sample
+
+  #seeding services for unique values only
+   stall.services = []
+   allServices = %w[Drinks Seating Vegetarian Hygiene Takeout CardPayment Wifi]
+
+   selected = []
+   4.times {
+    puts "Adding a service..."
+    selected << allServices.sample
+    stall.services << selected.last
+    allServices = allServices - selected
+   }
+
     file = URI.open('https://www.intrepidtravel.com/adventures/wp-content/uploads/2018/05/shutterstock_761367214-800.png')
     stall.user = User.all.sample
     puts "Listing creation..."
