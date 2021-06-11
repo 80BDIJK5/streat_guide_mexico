@@ -26,33 +26,14 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-
 import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
-});
-
-
-import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
-
-// Webpacker
-
-// Navbar scroll
-import { initUpdateNavbarOnScroll } from '../components/navbar';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
   initUpdateNavbarOnScroll();
-});
-
-// Dynamic banner text
-import { loadDynamicBannerText } from '../components/banner';
-
-document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
