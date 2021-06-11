@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 
 <div class="row">
-  <div class="col-sm-8 pl-5 pt-3">
+  <div class="col-md-8 pl-5 pt-3">
   <h1>Trending today</h1>
     <div class="card-container">
       <% Stall.all.first(2).each do |stall| %>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="col-sm-4 pr-5 pt-3">
+  <div class="col-md-4 pr-5 pt-3">
     <h1>Latest reviews</h1>
     <% @stall.reviews.limit(2).each do |review| %>
       <div class="review-card">
