@@ -6,8 +6,10 @@
   padding: 0.5rem 1rem;
   color: rgba(0,0,0,0.3);
   width: 100%;
-  position: sticky;
+  height: 60px;
+  position: absolute;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
