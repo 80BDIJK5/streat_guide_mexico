@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @stall = Stall.all.sample
+    @reviews = Review.last(4)
   end
 
   def compTest

@@ -62,3 +62,6 @@ gem 'geocoder'
 
 # PG Search
 gem 'pg_search', '~> 2.3.0'
+
+# Social media share
+gem 'rails-social-share-button'

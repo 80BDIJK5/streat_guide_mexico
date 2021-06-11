@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-4 pr-5 pt-3">
       <h1>Latest reviews</h1>
-      <% @stall.reviews.limit(4).each do |review| %>
+      <% @reviews.each do |review| %>
         <div class="review-card">
           <div class="review-card-product-infos">
             <h2>
@@ -36,7 +36,7 @@
       <% end %>
     </div>
   </div>
-<div class="row">
+  <div class="row">
     <div class="col-md-8 pl-5">
       <div class="card-container">
         <% Stall.all.first(2).each do |stall| %>
