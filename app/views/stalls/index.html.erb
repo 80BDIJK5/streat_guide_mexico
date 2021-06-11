@@ -19,7 +19,7 @@
 
   <div class="index-separate">
   <div class="card-container-index">
-      <% @stalls.first(6).each do |stall| %>
+      <% @stalls.last(6).each do |stall| %>
       <%= render partial: "shared/stallcard", locals: {stall: stall} %>
     <% end %>
   </div>

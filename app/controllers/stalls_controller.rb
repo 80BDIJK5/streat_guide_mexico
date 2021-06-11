@@ -11,6 +11,17 @@ class StallsController < ApplicationController
     end
   end
 
+  def index
+    @stalls = Stall.all
+    @markers = @stalls.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { stall: place })
+      }
+  end
+  end
+
   def show
   end
 
@@ -50,4 +61,5 @@ class StallsController < ApplicationController
   def set_stall
     @stall = Stall.find(params[:id])
   end
+
 end
