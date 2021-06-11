@@ -24,7 +24,6 @@
   padding: 0.5rem 1rem;
 }
 
-
 .index-search-form{
   margin-right: 4px;
 }
@@ -63,4 +62,16 @@ main {
 
 .row {
   width: 100%;
+}
+
+.home-container {
+  display: flex;
+}
+
+.cards {
+  flex: 4;
+}
+
+.reviews {
+  flex: 2;
 }
