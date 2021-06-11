@@ -1,37 +1,48 @@
 <%= render 'shared/banner' %>
 
-<div class="row">
-  <div class="col-md-8 pl-5 pt-3">
-  <h1>Trending today</h1>
-    <div class="card-container">
-      <% Stall.all.first(2).each do |stall| %>
-      <%= render partial: "shared/stallcard", locals: {stall: stall} %>
-    <% end %>
+<div class="grid-container">
+  <div class="row">
+    <div class="col-md-8 pl-5 pt-3">
+    <h1>Trending today</h1>
+      <div class="card-container">
+        <% Stall.all.first(2).each do |stall| %>
+        <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+      <% end %>
+      </div>
+    </div>
+    <div class="col-md-4 pr-5 pt-3">
+      <h1>Latest reviews</h1>
+      <% @stall.reviews.limit(4).each do |review| %>
+        <div class="review-card">
+          <div class="review-card-product-infos">
+            <h2>
+              <%= review.title %>
+            </h2>
+            <p>
+              <% review.rating.times do |rating| %>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+              <% ratingDelta = 5 - review.rating %>
+              <% ratingDelta.times do |time| %>
+                <span class="fa fa-star"></span>
+              <% end %>
+            </p>
+            <p>
+              <%= review.comment %>
+            </p>
+          </div>
+          <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <div class="col-md-4 pr-5 pt-3">
-    <h1>Latest reviews</h1>
-    <% @stall.reviews.limit(2).each do |review| %>
-      <div class="review-card">
-        <div class="review-card-product-infos">
-          <h2>
-            <%= review.title %>
-          </h2>
-          <p>
-            <% review.rating.times do |rating| %>
-              <span class="fa fa-star checked"></span>
-            <% end %>
-            <% ratingDelta = 5 - review.rating %>
-            <% ratingDelta.times do |time| %>
-              <span class="fa fa-star"></span>
-            <% end %>
-          </p>
-          <p>
-            <%= review.comment %>
-          </p>
-        </div>
-        <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
+<div class="row">
+    <div class="col-md-8 pl-5">
+      <div class="card-container">
+        <% Stall.all.first(2).each do |stall| %>
+        <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+      <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+</div>
