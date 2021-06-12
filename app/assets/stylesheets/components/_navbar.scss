@@ -5,9 +5,6 @@
   transition: 0.5s background-color ease;
   position: sticky;
   z-index: 1030;
-  // top: 0;
-  // left: 0;
-  // right: 0;
 }
 
 .navbar-collapse {
@@ -15,11 +12,27 @@
 }
 
 .navbar-brand img {
-  width: 35px;
+  width: 30px;
 }
 
 .dropdown-menu {
-  background-color: $mexico-red;
+  background-color: $light-gray;
   border: none;
 }
 
+.dropdown-menu a {
+  color: $black;
+}
+
+.dropdown-menu a:hover {
+  background-color: $light-gray;
+  color: $mexico-green;
+}
+
+.avatar-2 {
+  width: 35px;
+}
+
+.nav-item {
+  margin-right: 15px;
+}

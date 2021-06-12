@@ -17,6 +17,7 @@
   <div class="reviews pr-5 mt-3 ml-5">
     <h1>Latest reviews</h1>
     <% @reviews.each do |review| %>
+    <%= link_to stall_url(review.stall), style: 'text-decoration: none; link-style: none; color: black;' do %>
       <div class="review-card">
         <div class="review-card-product-infos">
         <h2>
@@ -37,6 +38,7 @@
         </div>
         <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
