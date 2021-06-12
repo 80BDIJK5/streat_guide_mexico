@@ -13,10 +13,14 @@
   </head>
 
   <body>
-
-     <main>
+    <% if should_show? %>
+      <%= render 'shared/navbarhome' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+  <main>
     <%= yield %>
-    </main>
+  </main>
     <%= render 'shared/footer' %>
   </body>
 </html>
