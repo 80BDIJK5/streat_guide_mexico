@@ -17,3 +17,17 @@
 .navbar-brand img {
   width: 35px;
 }
+
+.dropdown-menu {
+  background-color: $light-gray;
+  border: none;
+}
+
+.dropdown-menu a {
+  color: $black;
+}
+
+.dropdown-menu a:hover {
+  background-color: $light-gray;
+  color: $mexico-green;
+}
