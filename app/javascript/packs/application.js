@@ -33,12 +33,12 @@ import { loadDynamicBannerText } from '../components/banner';
 import { hideForm } from '../components/form_appear';
 
 document.addEventListener("turbolinks:load", function () {
-   hideForm();
+  hideForm();
   initSelect2();
   initMapbox();
   initAutocomplete();
   initUpdateNavbarOnScroll();
-  loadDynamicBannerText();
-
+  if (document.querySelector("#banner-typed-text")) {
+    loadDynamicBannerText()
+  };
 });
-
