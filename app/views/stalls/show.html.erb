@@ -5,11 +5,11 @@
       <div class="card">
         <%= cl_image_tag @stall.photos.first.key, crop: :fill, class: 'card-img-top', style: 'object-fit: cover; height: 400px;' %>
       </div>
-      <% else %>
-        <div class="card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        </div>
-      <% end %>
+    <% else %>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      </div>
+    <% end %>
   </div>
   <h3>About us: </h3>
     <p><%= @stall.description %></p>
@@ -17,26 +17,32 @@
   <div>
     <h3>Services</h3>
     <% if @stall.services.nil? %>
-       <p><span class="fa fa-star">Spanish/English</span> </p>
-       <p><span class="fa fa-star">Best experience</span> </p>
-       <p><span class="fa fa-star">Debit/Credit cards</span> </p>
+      <p><span class="fa fa-star">Spanish/English</span> </p>
+      <p><span class="fa fa-star">Best experience</span> </p>
+      <p><span class="fa fa-star">Debit/Credit cards</span> </p>
     <% else %>
       <% @stall.services.each do |service| %>
         <p><span class="fa fa-star">
-            <%= service %>
+          <%= service %>
         </span> </p>
-        <% end %>
       <% end %>
+    <% end %>
   </div>
   <div id= "buttons"class="d-flex flex-row justify-content-center">
     <div>
-      <%=link_to "Leave a review", new_stall_review_path(@stall),  class: "btn btn-second" %>
+      <%= button_tag "Leave a review", class: "btn btn-second click-me" %>
     </div>
     <div>
-      <%=link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
+      <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
     </div>
   </div>
   <br>
+  <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
+  <div id="insert-here">
+     <%= render "reviews/reviewform" %>
+  </div>
+
+
   <h3 class="text-center">What others are talking about us?</h3>
   <% @stall.reviews.each do |review| %>
     <div class="review-card">
@@ -61,3 +67,4 @@
 </div>
   <% end %>
 </div>
+
