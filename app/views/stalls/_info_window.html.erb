@@ -1,3 +1,22 @@
-<h2><%= stall.name %></h2>
-<p><%= stall.address %></p>
-<p><%= stall.address %></p>
+
+
+  <div class="blog-card">
+    <div class="meta">
+      <% if stall.photos.attached? %>
+  <div class="photo">
+   <%= cl_image_tag stall.photos.first.key, crop: :fill, style: 'object-fit: cover;' %>
+ </div>
+<% else %>
+  <div class="photo">
+    <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1542&q=80" />
+<% end %>
+</div>
+    </div>
+    <div class="description">
+      <h1><%= stall.name %></h1>
+      <h2>Direction: <%= stall.address %></h2>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
