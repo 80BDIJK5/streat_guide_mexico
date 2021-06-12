@@ -23,6 +23,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "jquery-bar-rating/dist/themes/css-stars";
 
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
@@ -31,6 +32,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 import { hideForm } from '../components/form_appear';
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener("turbolinks:load", function () {
   hideForm();
@@ -38,7 +40,10 @@ document.addEventListener("turbolinks:load", function () {
   initMapbox();
   initAutocomplete();
   initUpdateNavbarOnScroll();
+  initStarRating();
   if (document.querySelector("#banner-typed-text")) {
     loadDynamicBannerText()
   };
 });
+
+
