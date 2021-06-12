@@ -4,7 +4,7 @@
     <%= f.input :category, :collection => %w[Tacos Quesadillas Esquites Gorditas Flautas] %>
     <%= f.input :services, :collection => %w[Drinks Seating Vegetarian Hygiene Takeout CardPayment Wifi], input_html: { multiple: true, class: 'select2' } %>
     <%= f.input :address %>
-    <%=f.input :rating, input_html: { type: 'number', min: '1', max: '5' } %>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit 'Create', class: 'btn btn-block btn-main'%>
   <% end %>
