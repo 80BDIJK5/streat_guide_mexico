@@ -15,7 +15,7 @@
 }
 
 .navbar-brand img {
-  width: 35px;
+  width: 30px;
 }
 
 .dropdown-menu {
@@ -30,4 +30,12 @@
 .dropdown-menu a:hover {
   background-color: $light-gray;
   color: $mexico-green;
+}
+
+.avatar-2 {
+  width: 35px;
+}
+
+.nav-item {
+  margin-right: 15px;
 }

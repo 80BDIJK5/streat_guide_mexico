@@ -7,10 +7,5 @@ Rails.application.routes.draw do
       resources :reviews, only: [:new, :create, :destroy]
     end
 
-
-  # For testing purposes only(Nikita):
-  get '/testpage', to: 'pages#compTest'
-
-    # Bob components test
-    get "bob", to: "pages#bob"
+  resources :users, only: [:show]
 end
