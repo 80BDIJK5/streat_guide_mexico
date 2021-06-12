@@ -1,70 +1,89 @@
-<div class="container-lg">
-  <h2 class="text-center"> <%= @stall.name %> </h2>
-  <div id="photos-section-left">
+<div  class="container-show-stall">
+  <div class="row justify-content-start">
     <% if @stall.photos.attached? %>
-      <div class="card">
-        <%= cl_image_tag @stall.photos.first.key, crop: :fill, class: 'card-img-top', style: 'object-fit: cover; height: 400px;' %>
-      </div>
+      <div class="card col-7">
+        <%= cl_image_tag @stall.photos.first.key, crop: :fill, class: 'card-img-top', style: 'object-fit: contain; height: 400px;' %>
     <% else %>
-      <div class="card">
+      <div class="card col-7">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% end %>
+     <div class="row justify-content-around">
+      <div class="col img-align">
+        <%= cl_image_tag @stall.photos.first.key, class: 'img-stall'  %>
+      </div>
+      <div class="col img-align">
+        <%= cl_image_tag @stall.photos.first.key, class: 'img-stall' %>
+      </div>
+      <div class="col img-align">
+        <%= cl_image_tag @stall.photos.first.key, class: 'img-stall' %>
+      </div>
+    </div>
+    </div>
+    <div class="col-5">
+      <h2 class="text-center"> <%= @stall.name %> </h2>
+      <h3>About us: </h3>
+      <p><%= @stall.description %></p>
+      <p> Address: <%=@stall.address%> <p>
+      <h3>Services</h3>
+      <% if @stall.services.nil? %>
+        <p><span class="fa fa-star">Spanish/English</span> </p>
+        <p><span class="fa fa-star">Best experience</span> </p>
+        <p><span class="fa fa-star">Debit/Credit cards</span> </p>
+      <% else %>
+        <% @stall.services.each do |service| %>
+          <p><span class="fa fa-star">
+            <%= service %>
+          </span> </p>
+        <% end %>
+      <% end %>
+    <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-end">
+      <div>
+        <%= button_tag "Leave a review", class: "btn btn-second click-me" %>
+      </div>
+      <div>
+        <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Include a section for Location, Hours and Reviews -->
+  <div class="row justify-content-start">
+    <div class="card col-6">
+      <h3>How to find us? </h3>
+      <p>Insert map here</p>
+    </div>
+    <div class="col-5">
+  <div id="insert-here">
+    <%= render "reviews/reviewform" %>
+  </div>
+  <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
+  <% if @stall.reviews.empty? %>
+    <h3 class="text-center"> Oops! Doesnt' seem like anybody reviewed this stall yet... Do you wanna leave a review?</h3>
+  <% else %>
+    <h3 class="text-center">What others are talking about us?</h3>
+    <% @stall.reviews.each do |review| %>
+      <div class="review-card">
+        <div class="review-card-product-infos">
+          <h2>
+            <%= review.title %>
+          </h2>
+          <p>
+          <% review.rating.times do |rating| %>
+              <span class="fa fa-star checked"></span>
+          <% end %>
+          <% ratingDelta = 5 - review.rating %>
+          <% ratingDelta.times do |time| %>
+            <span class="fa fa-star"></span>
+          <% end %>
+          </p>
+          <p>
+            <%= review.comment %>
+          </p>
+        </div>
+          <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
       </div>
     <% end %>
-  </div>
-  <h3>About us: </h3>
-    <p><%= @stall.description %></p>
-    <p>  Address: <%=@stall.address%> <p>
-  <div>
-    <h3>Services</h3>
-    <% if @stall.services.nil? %>
-      <p><span class="fa fa-star">Spanish/English</span> </p>
-      <p><span class="fa fa-star">Best experience</span> </p>
-      <p><span class="fa fa-star">Debit/Credit cards</span> </p>
-    <% else %>
-      <% @stall.services.each do |service| %>
-        <p><span class="fa fa-star">
-          <%= service %>
-        </span> </p>
-      <% end %>
-    <% end %>
-  </div>
-  <div id= "buttons"class="d-flex flex-row justify-content-center">
-    <div>
-      <%= button_tag "Leave a review", class: "btn btn-second click-me" %>
-    </div>
-    <div>
-      <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
-    </div>
-  </div>
-  <br>
-  <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
-  <div id="insert-here">
-     <%= render "reviews/reviewform" %>
-  </div>
-
-
-  <h3 class="text-center">What others are talking about us?</h3>
-  <% @stall.reviews.each do |review| %>
-    <div class="review-card">
-  <div class="review-card-product-infos">
-    <h2>
-      <%= review.title %>
-    </h2>
-    <p>
-      <% review.rating.times do |rating| %>
-          <span class="fa fa-star checked"></span>
-        <% end %>
-        <% ratingDelta = 5 - review.rating %>
-        <% ratingDelta.times do |time| %>
-          <span class="fa fa-star"></span>
-        <% end %>
-    </p>
-    <p>
-      <%= review.comment %>
-    </p>
-  </div>
-  <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
-</div>
   <% end %>
+</div>
 </div>
 
