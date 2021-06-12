@@ -1,16 +1,3 @@
-.btn-header {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 3px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.btn-header:hover {
-  opacity: 1;
-}
-
 .btn-main {
   color: white;
   padding: 8px 24px;
@@ -41,8 +28,8 @@
   border: 1px solid white;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
+  font-weight: normal;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 

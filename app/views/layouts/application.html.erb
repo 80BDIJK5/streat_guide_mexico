@@ -13,14 +13,14 @@
   </head>
 
   <body>
-    <% if current_page?(controller: "pages", action: "home") %>
-    <%= render 'shared/navbarhome' %>
+    <% if should_show? %>
+      <%= render 'shared/navbarhome' %>
     <% else %>
-    <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' %>
     <% end %>
-     <main>
+  <main>
     <%= yield %>
-    </main>
+  </main>
     <%= render 'shared/footer' %>
   </body>
 </html>
