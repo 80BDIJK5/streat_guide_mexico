@@ -27,12 +27,14 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener("turbolinks:load", function () {
   initSelect2();
   initMapbox();
+  initAutocomplete();
   initUpdateNavbarOnScroll();
   loadDynamicBannerText();
 });
