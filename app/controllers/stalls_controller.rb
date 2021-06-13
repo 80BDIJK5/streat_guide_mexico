@@ -12,12 +12,13 @@ class StallsController < ApplicationController
   def index
     @stalls = Stall.all
     @markers = @stalls.geocoded.map do |place|
-      {
-        lat: place.latitude,
-        lng: place.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { stall: place })
-      }
+    {
+      lat: place.latitude,
+      lng: place.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { stall: place })
+    }
   end
+
   end
 
   def show
@@ -33,6 +34,7 @@ class StallsController < ApplicationController
     @stall.user = current_user
     if @stall.save
       redirect_to stall_path(@stall)
+      flash[:notice] = "Created succesfully"
     else
       render :new
     end
@@ -43,7 +45,7 @@ class StallsController < ApplicationController
 
   def update
     @stall.update(stall_params)
-    redirect_to stall_path(@stall) #optional
+    redirect_to stall_path(@stall) # Optional
   end
 
   def destroy
