@@ -1,6 +1,7 @@
 <%= simple_form_for [ @stall, @review ] do |f| %>
   <%= f.input :title %>
   <%= f.input :comment %>
-   <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+   <%= f.input :rating, collection: (1..5).to_a, label: "How was your experience?" %>
+   <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Upload a photo'  %>
   <%= f.submit "Submit Review", class: 'btn btn-block btn-main' %>
 <% end %>

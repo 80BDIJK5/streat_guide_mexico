@@ -3,4 +3,11 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  background-color: $mexico-red;
+  color: white;
+}
+
+.alert span {
+  color: white;
+  opacity: 1.0;
 }
