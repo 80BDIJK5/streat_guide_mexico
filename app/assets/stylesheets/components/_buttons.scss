@@ -45,6 +45,7 @@
   color: white;
   background: black;
   border-radius: 2px;
+}
 
 .button-index-info {
   padding: 5px 5px;
@@ -76,9 +77,11 @@
   &:hover {
       background: darken(#FC6E51,7%);
   }
+
   &:active {
     &:after {
       width: 150px;
       height: 150px;
     }
   }
+}
