@@ -33,8 +33,8 @@ class StallsController < ApplicationController
     @stall = Stall.new(stall_params)
     @stall.user = current_user
     if @stall.save
+      flash[:alert] = "Created succesfully"
       redirect_to stall_path(@stall)
-      flash[:notice] = "Created succesfully"
     else
       render :new
     end

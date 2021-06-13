@@ -20,11 +20,11 @@
     </div>
     </div>
     <div class="col-5">
-      <h2 class="text-center"> <%= @stall.name %> </h2>
-      <h3>About us: </h3>
+      <h1 class="text-center"> <%= @stall.name %> </h1>
+      <h2>About us: </h2>
       <p><%= @stall.description %></p>
       <p> Address: <%=@stall.address%> <p>
-      <h3>Services</h3>
+      <h2>Services</h2>
       <% if @stall.services.nil? %>
         <p><span class="fa fa-star">Spanish/English</span> </p>
         <p><span class="fa fa-star">Best experience</span> </p>
@@ -38,7 +38,7 @@
       <% end %>
     <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-end">
       <div>
-        <%= button_tag "Leave a review", class: "btn btn-second click-me" %>
+        <%= button_tag "Leave a review", class: "btn btn-main click-me" %>
       </div>
       <div>
         <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
@@ -49,7 +49,7 @@
   <!-- Include a section for Location, Hours and Reviews -->
   <div class="row justify-content-start">
     <div class="card col-6">
-      <h3>How to find us? </h3>
+      <h2>How to find us? </h2>
       <p>Insert map here</p>
     </div>
     <div class="col-5">
@@ -58,9 +58,9 @@
   </div>
   <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
   <% if @stall.reviews.empty? %>
-    <h3 class="text-center"> Oops! Doesnt' seem like anybody reviewed this stall yet... Do you wanna leave a review?</h3>
+    <h2 class="text-center"> Oops! Doesnt' seem like anybody reviewed this stall yet... Do you wanna leave a review?</h2>
   <% else %>
-    <h3 class="text-center">What others are talking about us?</h3>
+    <h2 class="text-center">What others are talking about us?</h2>
     <% @stall.reviews.each do |review| %>
       <div class="review-card">
         <div class="review-card-product-infos">
@@ -84,6 +84,6 @@
       </div>
     <% end %>
   <% end %>
-</div>
+  </div>
 </div>
 
