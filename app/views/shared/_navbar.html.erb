@@ -11,7 +11,7 @@
   <ul class="navbar-nav mr-auto">
   <% if user_signed_in? %>
     <li class="nav-item">
-      <%= link_to "Add a food stall", new_stall_path, class: "nav-link", style: 'color: white; font-weight: bold;' %>
+      <button type="button" class="nav-button" data-toggle="modal" data-target="#staticBackdrop">Add a food stall</button>
     </li>
     <li class="nav-item">
       <%= link_to "Explore", stalls_path, class: "nav-link", style: 'color: white; font-weight: bold;' %>
