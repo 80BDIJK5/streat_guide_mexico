@@ -1,18 +1,26 @@
-<div class="review-card">
-  <h2>
-    <%= review.title %>
-  </h2>
-  <p>
+<%= link_to stall_url(review.stall), style: 'text-decoration: none; link-style: none; color: black;' do %>
+  <div class="review-card">
+    <div class="review-card-product-infos">
+    <h2>
+      <%= review.title %>
+    </h2>
+    <p>
     <% review.rating.times do |rating| %>
       <span class="fa fa-star checked"></span>
     <% end %>
-      <% ratingDelta = 5 - review.rating %>
+    <% ratingDelta = 5 - review.rating %>
     <% ratingDelta.times do |time| %>
-      <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+      <% end %>
+    </p>
+    <p>
+      <%= review.comment %>
+    </p>
+    </div>
+    <% if review.user.avatar.attached? %>
+      <%= cl_image_tag review.user.avatar.key, class: "avatar-2" %>
+    <% else %>
+      <%= image_tag "avatar.png",class: "avatar-2" %>
     <% end %>
-  </p>
-  <%= rails_social_share_button_tag %>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-  <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
-</div>
+  </div>
+<% end %>
