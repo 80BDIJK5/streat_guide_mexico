@@ -17,4 +17,26 @@ class Stall < ApplicationRecord
   validates :description, presence: true
   validates :rating, presence: true, inclusion: { in: 1..5 }
   has_many_attached :photos
+
+  def calculate_rating
+    total = 0
+    self.reviews.each do |review|
+      total = total + review.rating
+    end
+    self.rating = total / self.reviews.count
+    self.save!
+  end
+
+  def photos_aggregation
+    photos_array = []
+    self.reviews.each do |review|
+      review.photos.each do |photo|
+        photos_array << photo
+      end
+    end
+    self.photos.each do |photo|
+      photos_array << photo
+    end
+    return photos_array
+  end
 end
