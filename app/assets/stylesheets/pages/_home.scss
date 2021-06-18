@@ -1,26 +1,4 @@
 // Specific CSS for your home-page
-.card-singular{
-  width: 50%;
-  margin-bottom: 12px;
-}
-
-.index-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-}
-
-.index-separate {
-  display: flex;
-  grid-template-columns: auto auto;
-  padding: 0.5rem 1rem;
-}
-
-.index-search-form{
-  margin-right: 4px;
-}
-
 h1 {
   font-size: 24px;
   color: #3d3d3d;
@@ -42,14 +20,6 @@ main {
   justify-content: space-between;
   margin-bottom: 12px;
 }
-
-.card-container-index {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
-  align-items: stretch;
-  margin-right: 10px;
- }
 
 .row {
   width: 100%;

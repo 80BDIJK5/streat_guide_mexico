@@ -6,30 +6,26 @@ class StallsController < ApplicationController
       @stalls = Stall.search_by_name_and_description(params[:query])
     else
       @stalls = Stall.all
+      @markers = @stalls.geocoded.map do |place|
+        {
+          lat: place.latitude,
+          lng: place.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { stall: place })
+        }
+      end
     end
-  end
-
-  def index
-    @stalls = Stall.all
-    @markers = @stalls.geocoded.map do |place|
-    {
-      lat: place.latitude,
-      lng: place.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { stall: place })
-    }
-  end
-
   end
 
   def show
     @review = Review.new
 
     @markers = [
-    {
-      lat: @stall.latitude,
-      lng: @stall.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { stall: @stall })
-    }]
+      {
+        lat: @stall.latitude,
+        lng: @stall.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { stall: @stall })
+      }
+    ]
   end
 
   def new
