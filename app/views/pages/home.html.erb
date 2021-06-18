@@ -5,40 +5,19 @@
     <h1>Trending today</h1>
     <div class="card-container">
       <% Stall.all.last(2).each do |stall| %>
-      <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+      <%= render "shared/stallcard", stall: stall %>
       <% end %>
     </div>
     <div class="card-container">
       <% Stall.all.first(2).each do |stall| %>
-      <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+      <%= render "shared/stallcard", stall: stall %>
       <% end %>
     </div>
   </div>
   <div class="reviews pr-5 mt-3 ml-5">
     <h1>Latest reviews</h1>
     <% @reviews.each do |review| %>
-    <%= link_to stall_url(review.stall), style: 'text-decoration: none; link-style: none; color: black;' do %>
-      <div class="review-card">
-        <div class="review-card-product-infos">
-        <h2>
-          <%= review.title %>
-        </h2>
-        <p>
-          <% review.rating.times do |rating| %>
-          <span class="fa fa-star checked"></span>
-          <% end %>
-          <% ratingDelta = 5 - review.rating %>
-          <% ratingDelta.times do |time| %>
-            <span class="fa fa-star"></span>
-          <% end %>
-          </p>
-          <p>
-            <%= review.comment %>
-          </p>
-        </div>
-        <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
-      </div>
-    <% end %>
+      <%= render "shared/review-card", review: review %>
     <% end %>
   </div>
 </div>
