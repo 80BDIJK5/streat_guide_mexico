@@ -23,6 +23,13 @@ class StallsController < ApplicationController
 
   def show
     @review = Review.new
+
+    @markers = [
+    {
+      lat: @stall.latitude,
+      lng: @stall.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { stall: @stall })
+    }]
   end
 
   def new
