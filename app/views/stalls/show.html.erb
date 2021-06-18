@@ -70,6 +70,7 @@
     </div>
   </div>
 </div>
+</div>
 
   <!-- Include a section for Location, Hours and Reviews -->
 <div class="map-reviews">
@@ -77,11 +78,11 @@
     <div class="card col-6">
     <h1 class="text-center">How to get there?</h1>
       <div class="map-image">
-        <div id="map"
-           style="width: 100x; height: 300px; margin-left: 20px; margin-right: 20px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        </div>
+      <div id="map"
+        style="width: 100x; height: 300px; margin-left: 20px; margin-right: 20px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
       </div>
     <div class="card col-6">
   <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
@@ -115,4 +116,5 @@
     </div>
   </div>
   <%= render 'shared/review-modal' %>
+</div>
 </div>
