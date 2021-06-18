@@ -1,11 +1,4 @@
 // Specific CSS for your home-page
-.card-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
- }
-
 .card-singular{
   width: 50%;
   margin-bottom: 12px;
@@ -74,4 +67,9 @@ main {
 
 .reviews {
   flex: 2;
+}
+
+.profile-avatar {
+  width: 100px;
+  border-radius: 50%;
 }
