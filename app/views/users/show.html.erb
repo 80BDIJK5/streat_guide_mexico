@@ -1,8 +1,21 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xs-12 col-sm-8 col-lg-8 ">
-    <h1>YOUR PROFILE</h1>
-      <%= @user.email %>
-    </div>
+<div class="profile-container px-5">
+  <div class="name p-5 mt-3 text-center">
+    <h1 class="mb-3"><%= @user.username %></h1>
+    <% if @user.avatar.attached? %>
+      <%= cl_image_tag @user.avatar.key, class: "profile-avatar" %>
+    <% else %>
+      <%= image_tag "avatar.png", class: "profile-avatar" %>
+    <% end %>
+    <p class="mt-3"><%= @user.description %></p>
+  </div>
+  <div class="description p-5 mt-3 ml-3">
+    <h1 class="mb-3"><%= @user.username %>'S REVIEWS</h1>
+    <% if @user.reviews.empty? %>
+      <h1 class="text-center">This user has not submitted any reviews.</h1>
+    <% else %>
+      <% @user.reviews.each do |review| %>
+        <%= render "shared/review-card", review: review %>
+    <% end %>
+    <% end %>
   </div>
 </div>
