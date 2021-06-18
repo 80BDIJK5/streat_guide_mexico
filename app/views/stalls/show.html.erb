@@ -1,9 +1,9 @@
 <div  class="container-show-stall">
   <!-- number of pictures a page will have? -->
   <div class="photos-info">
-    <% imgCount = @stall.photos.count %>
+      <% imgCount = @stall.photos_aggregation.count %>
     <div class="row">
-      <% if @stall.photos.attached? %>
+      <% if @stall.photos_aggregation.count > 0 %>
       <div class="card col-6">
       <h1 class="text-center">Recent photos</h1>
 
@@ -23,9 +23,9 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <%= cl_image_tag @stall.photos.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
+            <%= cl_image_tag @stall.photos_aggregation.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
           </div>
-          <% @stall.photos.each do |image | %>
+          <% @stall.photos_aggregation.each do |image | %>
             <div class="carousel-item">
               <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
             </div>
