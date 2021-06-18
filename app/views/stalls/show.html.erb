@@ -1,25 +1,33 @@
 <div  class="container-show-stall">
   <!-- number of pictures a page will have? -->
-  <% imgCount = @stall.photos.count %>
-  <div class="row justify-content-start">
-    <% if @stall.photos.attached? %>
-      <div class="card col-7">
-        <%= cl_image_tag @stall.photos.first.key, crop: :fill, class: 'card-img-top', style: 'object-fit: contain; height: 400px;' %>
-    <% else %>
-      <div class="card col-7">
+  <div class="photos-info">
+    <% imgCount = @stall.photos.count %>
+    <div class="row">
+      <% if @stall.photos.attached? %>
+      <div class="card col-6">
+      <h1 class="text-center">Recent photos</h1>
+
+      <% else %>
+      <div class="card col-6">
+      <h1 class="text-center">Recent photos</h1>
         <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg" />
-    <% end %>
+      <% end %>
     <!-- Insert Bootstrap for image carousel here -->
     <!-- Iterate through each image and add them to a carousel view -->
-    <% if imgCount != 0 %>
+      <% if imgCount != 0 %>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <%= cl_image_tag @stall.photos.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 300px;'%>
+            <%= cl_image_tag @stall.photos.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
           </div>
           <% @stall.photos.each do |image | %>
             <div class="carousel-item">
-              <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 300px;'%>
+              <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
             </div>
           <% end %>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -32,52 +40,55 @@
           </a>
         </div>
       </div>
-  <% end %>
-</div>
+    <% end %>
+    </div>
     <!-- Right side section -->
-    <div class="col-5">
+    <div class="card col-6">
       <h1 class="text-center"> <%= @stall.name %> </h1>
-      <h2>About us: </h2>
+      <h2>General information</h2>
       <p><%= @stall.description %></p>
-      <p> Address: <%=@stall.address%> <p>
+      <h2>Address</h2>
+      <p> <%=@stall.address%> <p>
       <h2>Services</h2>
       <% if @stall.services.nil? %>
-        <p><span class="fa fa-star">Spanish/English</span> </p>
-        <p><span class="fa fa-star">Best experience</span> </p>
-        <p><span class="fa fa-star">Debit/Credit cards</span> </p>
+        <p><span class="fas fa-check-circle mr-1"></span>Spanish/English</p>
+        <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
+        <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
       <% else %>
         <% @stall.services.drop(1).each do |service| %>
-          <p><span class="fa fa-star">
-            <%= service %>
-          </span> </p>
+          <p><span class="fas fa-check-circle mr-1"></span><%= service %></p>
         <% end %>
       <% end %>
-    <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-end">
-      <div>
-        <%= button_tag "Leave a review", class: "btn btn-main click-me" %>
-      </div>
-      <div>
-        <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
+      <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-end">
+        <div>
+          <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review</button>
+        </div>
+        <div>
+          <%= link_to "Get Directions", stalls_path,  class: "btn btn-second" %>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-  <br>
+</div>
+
   <!-- Include a section for Location, Hours and Reviews -->
+<div class="map-reviews">
   <div class="row justify-content-start">
-    <div class="card col-7">
-      <h2>How to find us? </h2>
-      <p>Insert map here</p>
-    </div>
-    <div class="col-5">
-  <div id="insert-here">
-    <%= render "reviews/reviewform" %>
-  </div>
+    <div class="card col-6">
+    <h1 class="text-center">How to get there?</h1>
+      <div class="map-image">
+        <div id="map"
+           style="width: 100x; height: 300px; margin-left: 20px; margin-right: 20px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+      </div>
+    <div class="card col-6">
   <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
   <% if @stall.reviews.empty? %>
-    <h2 class="text-center"> Oops! Doesnt' seem like anybody reviewed this stall yet... Do you wanna leave a review?</h2>
+    <h1 class="text-center">This place has no reviews yet</h1>
   <% else %>
-    <h2 class="text-center">What others are talking about us?</h2>
+    <h1 class="text-center">Reviews</h1>
     <% @stall.reviews.each do |review| %>
       <div class="review-card">
         <div class="review-card-product-infos">
@@ -100,6 +111,8 @@
           <img class="avatar-large" src='https://kitt.lewagon.com/placeholder/users/Eschults' width="50px" />
       </div>
     <% end %>
-  <% end %>
+    <% end %>
+    </div>
   </div>
+  <%= render 'shared/review-modal' %>
 </div>
