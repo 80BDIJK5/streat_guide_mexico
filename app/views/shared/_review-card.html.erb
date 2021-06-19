@@ -3,6 +3,9 @@
     <div class="review-card-product-infos">
     <h2>
       <%= review.title %>
+      <% if review.photos.attached? %>
+        <span class="fas fa-camera ml-1"></span>
+      <% end %>
     </h2>
     <p>
     <% review.rating.times do |rating| %>

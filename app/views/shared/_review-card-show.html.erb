@@ -1,0 +1,30 @@
+<div class="review-card">
+  <div class="review-card-product-infos">
+  <h2>
+    <%= review.title %>
+    <% if review.photos.attached? %>
+      <span class="fas fa-camera ml-1"></span>
+    <% end %>
+  </h2>
+  <p>
+  <% review.rating.times do |rating| %>
+    <span class="fa fa-star checked"></span>
+  <% end %>
+  <% ratingDelta = 5 - review.rating %>
+  <% ratingDelta.times do |time| %>
+  <span class="fa fa-star"></span>
+  <% end %>
+  </p>
+  <p>
+    <%= review.comment %>
+  </p>
+  </div>
+  <% if review.user.avatar.attached? %>
+    <%= link_to user_url(review.user), style: 'text-decoration: none; link-style: none; color: black;' do %>
+     <%= cl_image_tag review.user.avatar.key, class: "avatar-2" %>
+    <% end %>
+  <% else %>
+    <%= image_tag "avatar.png",class: "avatar-2" %>
+  <% end %>
+  </div>
+
