@@ -48,7 +48,7 @@ export { initMapbox };
 const markerupdate = (markers) => {
   const stallcardselector = document.querySelectorAll('.stall-card');
       stallcardselector.forEach (stall=> {
-        stall.addEventListener('mouseenter',
+        stall.addEventListener('mouseover',
           event => {
             const marker = markers[stall.id]
             marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#f00';
