@@ -1,4 +1,4 @@
-<%= link_to stall_path(stall), class: 'stall-card', style: 'text-decoration: none; link-style: none; color: black;' do %>
+<%= link_to stall_path(stall), class: 'stall-card', id: stall.id,style: 'text-decoration: none; link-style: none; color: black;' do %>
   <% if stall.photos.attached? %>
     <%= cl_image_tag stall.photos.first.key, crop: :fill, style: 'object-fit: cover;' %>
   <% else %>
