@@ -1,0 +1,5 @@
+meta_product_name: "strEAT Guide Mexico"
+meta_title: "Welcome to strEAT Guide Mexico"
+meta_description: "Discover the best Mexico City street cuisine. Created by food lovers like you."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
