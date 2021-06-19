@@ -3,7 +3,7 @@
   <h2>
     <%= review.title %>
     <% if review.photos.attached? %>
-      <span class="fas fa-camera ml-1"></span>
+      <button type="button" class="fas fa-camera ml-1" data-toggle="modal" data-target="#photoBackdrop<%= review.id %>"></button>
     <% end %>
   </h2>
   <p>
@@ -26,5 +26,6 @@
   <% else %>
     <%= image_tag "avatar.png",class: "avatar-2" %>
   <% end %>
-  </div>
+</div>
+
 
