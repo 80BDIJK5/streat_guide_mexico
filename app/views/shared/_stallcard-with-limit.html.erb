@@ -1,0 +1,25 @@
+<%= link_to stall_path(stall), class: 'stall-card', style: 'text-decoration: none; link-style: none; color: black;' do %>
+  <% if stall.photos.attached? %>
+    <%= cl_image_tag stall.photos.first.key, crop: :fill, style: 'object-fit: cover;' %>
+  <% else %>
+    <img src="https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1542&q=80" />
+  <% end %>
+    <div class="stall-card-infos">
+      <div>
+        <h2>
+          <%= stall.name %>
+        </h2>
+        <p>
+          <% stall.rating.times do |rating| %>
+            <span class="fa fa-star checked"></span>
+          <% end %>
+          <% ratingDelta = 5 - stall.rating %>
+          <% ratingDelta.times do |time| %>
+            <span class="fa fa-star"></span>
+          <% end %>
+        </p>
+        <p title="<%= stall.description %>"><%= stall.description.first(100) %>...</p>
+      </div>
+      <h2 class="stall-card-pricing">$$$</h2>
+    </div>
+<% end %>

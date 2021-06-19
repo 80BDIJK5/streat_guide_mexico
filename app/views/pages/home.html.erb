@@ -5,12 +5,12 @@
     <h1>Trending today</h1>
     <div class="card-container">
       <% Stall.all.last(2).each do |stall| %>
-      <%= render "shared/stallcard", stall: stall %>
+      <%= render "shared/stallcard-with-limit", stall: stall %>
       <% end %>
     </div>
     <div class="card-container">
       <% Stall.all.first(2).each do |stall| %>
-      <%= render "shared/stallcard", stall: stall %>
+      <%= render "shared/stallcard-with-limit", stall: stall %>
       <% end %>
     </div>
   </div>
