@@ -1,67 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>The change you wanted was rejected (422)</title>
+  <title>The page you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    a {
+      text-decoration: none;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body {
+      font-family: "Lato", sans-serif;
+      font-weight: 600;
+      color: #343434;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .error_section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-image: linear-gradient(-225deg, #F4F4F4, #F4F4F4);
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .error_section_subtitle {
+      color: #438267;
+      text-transform: uppercase;
+      letter-spacing: 5pt;
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin-bottom: -5em;
+    }
+
+    .error_section .error_title {
+      --x-shadow: 0;
+      --y-shadow: 0;
+      --x: 50%;
+      --y: 50%;
+      font-size: 15rem;
+      transition: all 0.2s ease;
+      position: relative;
+      padding: 2rem;
+    }
+
+    .error_section .error_title:hover {
+      transition: all 0.2s ease;
+      text-shadow: var(--x-shadow) var(--y-shadow) 10px #1A1A1A;
+    }
+
+    .error_section .error_title p {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.05), transparent);
+      background-position: var(--x) var(--y);
+      background-repeat: no-repeat;
+      text-shadow: none;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.1s ease;
+    }
+
+    .btn {
+      color: white;
+      font-weight: normal;
+      padding: 8px 24px;
+      background: #146341;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #438267;
+      color: white;
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+<body class="">
+  <!-- This file lives in public/404.html -->
+  <section class="error_section">
+    <p class="error_section_subtitle">Oops. It looks as if something broke.</p>
+    <h1 class="error_title">
+      <p>422</p>
+      422
+    </h1>
+    <a href="http://www.streatguidemexico.com/" class="btn btn-main">Go back Home</a>
+  </section>
 </body>
+<script>
+  const title = document.querySelector('.error_title')
+
+
+  //////// Light //////////
+  document.onmousemove = function (e) {
+    let x = e.pageX - window.innerWidth / 2;
+    let y = e.pageY - window.innerHeight / 2;
+
+    title.style.setProperty('--x', x + 'px')
+    title.style.setProperty('--y', y + 'px')
+  }
+
+  ////////////// Shadow ///////////////////
+  title.onmousemove = function (e) {
+    let x = e.pageX - window.innerWidth / 2;
+    let y = e.pageY - window.innerHeight / 2;
+
+    let rad = Math.atan2(y, x).toFixed(2);
+    let length = Math.round(Math.sqrt((Math.pow(x, 2)) + (Math.pow(y, 2))) / 10);
+
+    let x_shadow = Math.round(length * Math.cos(rad));
+    let y_shadow = Math.round(length * Math.sin(rad));
+
+    title.style.setProperty('--x-shadow', - x_shadow + 'px')
+    title.style.setProperty('--y-shadow', - y_shadow + 'px')
+
+  }
+</script>
+
 </html>
