@@ -4,10 +4,10 @@
         <!-- Wrapper for row -->
         <div class="row">
             <div class="card col-6">
-              <h1 class="text-center">Recent photos</h1>
+              <h1 class="text-center section-headers">Recent photos <i class="fas fa-images"></i></h1>
               <% imgCount = @stall.photos_aggregation.count %>
               <% if @stall.photos_aggregation.count == 0 %>
-                <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg" />
+                <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg", style="object-fit: contain; height: 400px;" />
               <% end %>
                 <!-- Insert Bootstrap for image carousel here -->
                 <!-- Iterate through each image and add them to a carousel view -->
@@ -20,11 +20,11 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <%= cl_image_tag @stall.photos_aggregation.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
+                        <%= cl_image_tag @stall.photos_aggregation.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: auto;'%>
                       </div>
                       <% @stall.photos_aggregation.each do |image | %>
                         <div class="carousel-item">
-                          <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: 400px;'%>
+                          <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: auto;'%>
                         </div>
                       <% end %>
                       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -38,27 +38,40 @@
                     </div>
                   </div>
                 <% end %>
+                <br>
+                <div>
+                  <span class="text-center"><%= rails_social_share_button_tag %> </span>
+                </div>
+
             </div>
     <!-- Right side section -->
     <div class="card col-6">
-      <h1 class="text-center"> <%= @stall.name %> </h1>
+      <h1 class="text-center section-headers"> <%= @stall.name %>&nbsp;<i class="fas fa-utensils">&nbsp;</i> </h1>
       <h2>General information</h2>
-      <p><%= @stall.description %></p>
+      <p class="info-entry "><%= @stall.description %></p>
       <h2>Address</h2>
-      <p> <%=@stall.address%> <p>
-      <h2>Services</h2>
+      <p class="info-entry"> <%=@stall.address%> <p>
+      <h2 >Services</h2>
       <% if @stall.services.nil? %>
+        <span class="info-entry">
         <p><span class="fas fa-check-circle mr-1"></span>Spanish/English</p>
         <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
         <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
+        </span>
+        <br>
       <% else %>
+      <span class="info-entry">
         <% @stall.services.drop(1).each do |service| %>
           <p><span class="fas fa-check-circle mr-1"></span><%= service %></p>
         <% end %>
-      <% end %>
+      </span>
+
+        <% end %>
+      <br>
       <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-center">
-        <div>
-          <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review</button>
+
+        <div class="mt-2">
+          <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review&nbsp; <i class="fas fa-comment">  </i></button>
         </div>
       </div>
     </div>
@@ -70,10 +83,10 @@
     <div class="map-reviews">
       <div class="row justify-content-start">
         <div class="card col-6">
-        <h1 class="text-center">How to get there?</h1>
+        <h1 class="text-center section-headers"><i class="fas fa-directions"></i>&nbsp;How to get there? </h1>
           <div class="map-image">
           <div id="map"
-            style="width: 100x; height: 300px; margin-left: 20px; margin-right: 20px;"
+            style="width: 100x; height: 300px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
@@ -81,9 +94,10 @@
         <div class="card col-6">
       <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
       <% if @stall.reviews.empty? %>
-        <h1 class="text-center">This place has no reviews yet</h1>
+        <h1 class="text-center section-headers"> <i class="far fa-comments"></i> &nbsp;Reviews</h1>
+        <h4>This place has no reviews yet :(<br> Be the first to leave a review!</h4>
       <% else %>
-        <h1 class="text-center">Reviews</h1>
+        <h1 class="text-center section-headers"> <i class="far fa-comments"></i> &nbsp;Reviews</h1>
         <% @stall.reviews.each do |review| %>
           <%= render 'shared/review-card', review: review %>
         <% end %>
