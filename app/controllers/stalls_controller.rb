@@ -5,9 +5,10 @@ class StallsController < ApplicationController
     if params[:query].present?
       @stalls = Stall.search_by_name_and_description(params[:query])
     else
-      @stalls = Stall.all
+      @stalls = Stall.geocoded
       @markers = @stalls.geocoded.map do |place|
         {
+          id:  place.id,
           lat: place.latitude,
           lng: place.longitude,
           info_window: render_to_string(partial: "info_window", locals: { stall: place })
@@ -21,6 +22,7 @@ class StallsController < ApplicationController
 
     @markers = [
       {
+        id: @stall.id,
         lat: @stall.latitude,
         lng: @stall.longitude,
         info_window: render_to_string(partial: "info_window", locals: { stall: @stall })
