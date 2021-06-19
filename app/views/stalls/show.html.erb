@@ -99,7 +99,8 @@
       <% else %>
         <h1 class="text-center section-headers"> <i class="far fa-comments"></i> &nbsp;Reviews</h1>
         <% @stall.reviews.each do |review| %>
-          <%= render 'shared/review-card', review: review %>
+          <%= render 'shared/review-card-show', review: review %>
+          <%= render 'shared/photo-modal', review: review %>
         <% end %>
         <% end %>
         </div>
