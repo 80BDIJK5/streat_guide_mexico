@@ -1,20 +1,14 @@
-.container-show-stall {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.show-container {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
-.row {
-  width: 100%;
-}
+// .show-container h2 {
+//   border-bottom: 1px solid #f4a207;
+//   margin-bottom: 20px;
+// }
 
-.card {
-  background: #f4f4f4;
-  padding: 15px 15px;
-  border: none;
-  border-radius: 5px;
-}
 
 .carousel-control-prev-icon {
     width: 20px;
@@ -32,19 +26,13 @@
   margin-top: 10px;
 }
 
-.info-entry {
-  background-color: white;
-  padding: 15px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.7);
-  border-radius: 5px;
-}
-
 .section-headers {
-  background-color: #fabf4d;
-  color: #3d3d3d;
+  background-color: #f4a207;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
   padding: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
