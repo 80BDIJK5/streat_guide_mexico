@@ -1,9 +1,9 @@
-<div  class="container-show-stall">
+<div  class="container-fluid">
     <!-- Top side section -->
-    <div class="photos-info">
+
         <!-- Wrapper for row -->
         <div class="row">
-            <div class="card col-5 ml-5">
+            <div class="card col-6">
               <h1 class="text-center section-headers">Recent photos</h1>
               <% imgCount = @stall.photos_aggregation.count %>
               <% if @stall.photos_aggregation.count == 0 %>
@@ -78,14 +78,14 @@
         </div>
       </div>
     </div>
-  </div>
+
 </div>
 
 
   <!--Bottom side section-->
     <div class="map-reviews">
       <div class="row justify-content-start">
-        <div class="card col-5 ml-5">
+        <div class="card col-6">
         <h1 class="text-center section-headers">How to get there? </h1>
           <div class="map-image mapboxgl-canvas-show">
           <div id="map"
