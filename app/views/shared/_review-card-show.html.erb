@@ -3,7 +3,7 @@
   <h2>
     <%= review.title %>
     <% if review.photos.attached? %>
-      <button type="button" class="fas fa-camera ml-1" data-toggle="modal" data-target="#photoBackdrop<%= review.id %>"></button>
+      <button type="button" style="border:none; background:white;" class="fas fa-camera ml-1" data-toggle="modal" data-target="#photoBackdrop<%= review.id %>"></button>
     <% end %>
   </h2>
   <p>

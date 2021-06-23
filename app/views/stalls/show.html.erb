@@ -3,8 +3,8 @@
     <div class="photos-info">
         <!-- Wrapper for row -->
         <div class="row">
-            <div class="card col-6">
-              <h1 class="text-center section-headers">Recent photos <i class="fas fa-images"></i></h1>
+            <div class="card col-5 ml-5">
+              <h1 class="text-center section-headers">Recent photos</h1>
               <% imgCount = @stall.photos_aggregation.count %>
               <% if @stall.photos_aggregation.count == 0 %>
                 <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg", style="object-fit: contain; height: 400px;" />
@@ -38,15 +38,14 @@
                     </div>
                   </div>
                 <% end %>
-                <br>
                 <div>
-                  <span class="text-center"><%= rails_social_share_button_tag %> </span>
+                  <div class="text-center mt-3"><%= rails_social_share_button_tag %></div>
                 </div>
 
             </div>
     <!-- Right side section -->
     <div class="card col-6">
-      <h1 class="text-center section-headers"> <%= @stall.name %>&nbsp;<i class="fas fa-utensils">&nbsp;</i> </h1>
+      <h1 class="text-center section-headers"> <%= @stall.name %></h1>
       <h2>General information</h2>
       <p class="info-entry "><%= @stall.description %></p>
       <h2>Address</h2>
@@ -58,7 +57,6 @@
         <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
         <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
         </span>
-        <br>
       <% else %>
       <span class="info-entry">
         <% @stall.services.drop(1).each do |service| %>
@@ -67,8 +65,8 @@
       </span>
 
         <% end %>
-      <br>
-      <div id= "buttons"class="d-flex flex-row justify-content-around bd-highlight mb-3 align-items-center">
+
+      <div id= "buttons" class="d-flex mt-3 flex-row justify-content-around align-items-center">
 
         <div class="mt-2">
           <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review&nbsp; <i class="fas fa-comment">  </i></button>
@@ -82,9 +80,9 @@
   <!--Bottom side section-->
     <div class="map-reviews">
       <div class="row justify-content-start">
-        <div class="card col-6">
-        <h1 class="text-center section-headers"><i class="fas fa-directions"></i>&nbsp;How to get there? </h1>
-          <div class="map-image">
+        <div class="card col-5 ml-5">
+        <h1 class="text-center section-headers">How to get there? </h1>
+          <div class="map-image mapboxgl-canvas-show">
           <div id="map"
             style="width: 100x; height: 300px;"
             data-markers="<%= @markers.to_json %>"
@@ -94,10 +92,10 @@
         <div class="card col-6">
       <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
       <% if @stall.reviews.empty? %>
-        <h1 class="text-center section-headers"> <i class="far fa-comments"></i> &nbsp;Reviews</h1>
-        <h4>This place has no reviews yet :(<br> Be the first to leave a review!</h4>
+        <h1 class="text-center section-headers">Reviews</h1>
+        <p class="info-entry ">This place has no reviews yet. Be the first to leave a review!</p>
       <% else %>
-        <h1 class="text-center section-headers"> <i class="far fa-comments"></i> &nbsp;Reviews</h1>
+        <h1 class="text-center section-headers">Reviews</h1>
         <% @stall.reviews.each do |review| %>
           <%= render 'shared/review-card-show', review: review %>
           <%= render 'shared/photo-modal', review: review %>

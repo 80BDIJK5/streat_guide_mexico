@@ -32,7 +32,7 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
     const mapmarker = new mapboxgl.Marker({
-      color: '#0f0'
+      color: '#146341'
     })
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup) // add this
@@ -51,12 +51,12 @@ const markerupdate = (markers) => {
         stall.addEventListener('mouseover',
           event => {
             const marker = markers[stall.id]
-            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#f00';
+            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#ce2426';
           })
         stall.addEventListener('mouseout',
           event => {
             const marker = markers[stall.id]
-            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#0f0';
+            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#146341';
           })
       })
       console.log(markers)
