@@ -10,7 +10,7 @@
   </div>
 
 <div class="index-container mx-5 mb-5">
-  <div class="card-container-index" style="width: 50%;">
+  <div class="card-container-index" style="width: 50%; height:950px;" >
       <% @stalls.last(6).each do |stall| %>
       <%= render partial: "shared/stallcard", locals: {stall: stall} %>
     <% end %>
