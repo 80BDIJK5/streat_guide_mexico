@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def new
     @stall = Stall.find(params[:stall_id])
     @review = Review.new

@@ -25,18 +25,18 @@
   color: white;
 }
 
-.btn-transparant {
+.btn-login {
   color: white;
-  border: 1px solid white;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: normal;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  font-weight: bold;
+  padding: 8px;
+  background: #f4a207;
+  transition: background 0.3s ease;
+  border-radius: 3px;
 }
 
-.btn-transparant:hover {
-  opacity: 1;
+.btn-login:hover {
+  background: #fabe4d;
+  color: white;
 }
 
 .nav-button {
