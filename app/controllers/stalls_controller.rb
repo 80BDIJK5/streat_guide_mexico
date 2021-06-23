@@ -1,5 +1,6 @@
 class StallsController < ApplicationController
   before_action :set_stall, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create]
 
   def index
     if params[:query].present?
