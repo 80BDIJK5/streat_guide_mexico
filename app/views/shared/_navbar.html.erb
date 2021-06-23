@@ -1,4 +1,4 @@
-<div class="navbar-lewagon navbar navbar-expand-sm navbar-light fixed-top px-5">
+<div class="navbar-lewagon navbar navbar-expand-sm navbar-light fixed-top px-5 py-3">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "food-cart.png" %>
   <% end %>
@@ -28,8 +28,22 @@
       </div>
     </li>
     <% else %>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <button type="button" class="nav-button" data-toggle="modal" data-target="#stallBackdrop">Add a food stall</button>
+      </li>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <li class="nav-item">
+          <button type="button" class="nav-button">Add a food stall</button>
+        </li>
+      <% end %>
+    <% end %>
     <li class="nav-item">
-      <%= link_to "Login / Sign Up", new_user_session_path, style: 'text-decoration: none; color:white;', class: "btn-transparant" %>
+      <%= link_to "Explore", stalls_path, class: "nav-link", style: 'color: white; font-weight: bold;' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Login/Sign up", new_user_session_path, style: 'text-decoration: none; color:white;', class: "btn-login" %>
     </li>
     <% end %>
   </ul>

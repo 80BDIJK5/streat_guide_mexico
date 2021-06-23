@@ -65,11 +65,16 @@
       </span>
 
         <% end %>
-
       <div id= "buttons" class="d-flex mt-3 flex-row justify-content-around align-items-center">
 
         <div class="mt-2">
-          <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review&nbsp; <i class="fas fa-comment">  </i></button>
+          <% if user_signed_in? %>
+            <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review<i class="ml-1 fas fa-comment"></i></button>
+          <% else %>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-main">Leave a review<i class="fas fa-comment"></i></button>
+          <% end %>
+          <% end %>
         </div>
       </div>
     </div>
