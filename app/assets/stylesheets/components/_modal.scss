@@ -1,0 +1,17 @@
+.modal-content {
+  background-color: $light-gray;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+
+.modal-header h1 {
+  color: $dark-gray;
+  border-bottom: 2px solid $orange-shade;
+  border-bottom-width: medium;
+  display: inline-block;
+}
+
+
