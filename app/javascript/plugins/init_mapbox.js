@@ -51,7 +51,7 @@ const markerupdate = (markers) => {
         stall.addEventListener('mouseover',
           event => {
             const marker = markers[stall.id]
-            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#ce2426';
+            marker.getElement().querySelector('g').querySelectorAll('g')[1].style.fill = '#f4a207';
           })
         stall.addEventListener('mouseout',
           event => {
