@@ -1,6 +1,6 @@
 <div class="show-container">
   <div class="row my-5">
-    <div class="col-6 box">
+    <div class="col-12 col-lg-6 box">
       <% imgCount = @stall.photos_aggregation.count %>
       <% if @stall.photos_aggregation.count == 0 %>
         <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg", style="object-fit: contain; height: 400px;" />
@@ -38,18 +38,20 @@
     </div>
     </div>
     <!-- Right side section -->
-    <div class="col-6 box">
+    <div class="col-12 col-lg-6 box">
       <div class="d-flex flex-row justify-content-between"><h1><%= @stall.name.upcase %></h1><%= rails_social_share_button_tag %></div>
       <h2>General information</h2>
       <p><%= @stall.description %></p>
       <h2>Address</h2>
       <p> <%=@stall.address%> <p>
+      <h2>Category</h2>
+      <p> <%=@stall.category%> <p>
       <h2>Services</h2>
       <% if @stall.services.nil? %>
-        <div class="d-flex flex-row justify-content-between">
-          <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
-          <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
-          <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
+        <div class="d-flex flex-row justify-content-left">
+          <p class="mr-3"><span class="fas fa-check-circle mr-1"></span>Best experience</p>
+          <p class="mr-3"><span class="fas fa-check-circle mr-1"></span>Best experience</p>
+          <p class="mr-3"><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
         </div>
       <% else %>
         <div class="d-flex flex-row justify-content-left">
@@ -66,7 +68,7 @@
   <!--Bottom side section-->
 
   <div class="row my-5">
-    <div class="col-6 box">
+    <div class="col-12 col-lg-6 box">
       <div class="map-image mapboxgl-canvas-show">
         <div id="map"
           style="width: 100x; height: 300px;"
@@ -74,7 +76,7 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
-      <div class="col-6 box">
+      <div class="col-12 col-lg-6 box">
       <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
       <% if @stall.reviews.empty? %>
         <div class="d-flex flex-row justify-content-between"><h1>REVIEWS</h1> <% if user_signed_in? %>

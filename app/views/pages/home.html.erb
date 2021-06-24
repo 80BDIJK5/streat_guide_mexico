@@ -1,23 +1,25 @@
 <%= render 'shared/banner' %>
 
 <div class="content-container">
-  <div class="cards mt-3">
-    <h1>TRENDING TODAY</h1>
-    <div class="card-container">
-      <% Stall.all.last(2).each do |stall| %>
-      <%= render "shared/stallcard-with-limit", stall: stall %>
+  <div class="row my-5">
+    <div class="col-12 col-lg-8">
+      <h1>TRENDING TODAY</h1>
+      <div class="card-container">
+        <% Stall.all.last(2).each do |stall| %>
+        <%= render "shared/stallcard-with-limit", stall: stall %>
+        <% end %>
+      </div>
+      <div class="card-container">
+        <% Stall.all.first(2).each do |stall| %>
+        <%= render "shared/stallcard-with-limit", stall: stall %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <h1>LATEST REVIEWS</h1>
+      <% @reviews.each do |review| %>
+        <%= render "shared/review-card", review: review %>
       <% end %>
     </div>
-    <div class="card-container">
-      <% Stall.all.first(2).each do |stall| %>
-      <%= render "shared/stallcard-with-limit", stall: stall %>
-      <% end %>
-    </div>
-  </div>
-  <div class="reviews mt-3">
-    <h1>LATEST REVIEWS</h1>
-    <% @reviews.each do |review| %>
-      <%= render "shared/review-card", review: review %>
-    <% end %>
   </div>
 </div>
