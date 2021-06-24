@@ -5,6 +5,6 @@
     <%= f.input :services, :collection => %w[Drinks Seating Vegetarian Hygiene Takeout CardPayment Wifi], input_html: { multiple: true, class: 'select2' } %>
     <%= f.input :address %>
     <%= f.input :rating, collection: (1..5).to_a, label: "Rate this place" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Upload a photo'  %>
-    <%= f.submit 'Create', class: 'btn btn-block btn-main'%>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'UPLOAD A PHOTO'  %>
+    <%= f.submit 'CREATE', class: 'btn btn-block btn-main'%>
   <% end %>
