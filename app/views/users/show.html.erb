@@ -1,23 +1,25 @@
-<div class="content-container">
+<div class="content-container my-5">
+  <div class="col-12 col-lg-6 text-center">
+    <h1 class="mb-3"><%= @user.username %></h1>
+       <div class="image-container">
+        <% if @user.avatar.attached? %>
+          <%= cl_image_tag @user.avatar.key, class: "profile-avatar" %>
+        <% else %>
+          <%= image_tag "avatar.png", class: "profile-avatar" %>
+        <% end %>
+      </div>
+    <p class="mt-3"><%= @user.description %></p>
+  </div>
 
-    <div class="name mt-5 text-center">
-      <h1 class="mb-3"><%= @user.username %></h1>
-      <% if @user.avatar.attached? %>
-        <%= cl_image_tag @user.avatar.key, class: "profile-avatar" %>
-      <% else %>
-        <%= image_tag "avatar.png", class: "profile-avatar" %>
-      <% end %>
-      <p class="mt-3"><%= @user.description %></p>
-    </div>
-    <div class="description mt-5 ml-3">
-      <h1 class="mb-3"><%= @user.username %>'S REVIEWS</h1>
-      <% if @user.reviews.empty? %>
-        <h1 class="text-center">This user has not submitted any reviews.</h1>
-      <% else %>
-        <% @user.reviews.each do |review| %>
-          <%= render "shared/review-card", review: review %>
-          <% end %>
-      <% end %>
-    </div>
 
+  <div class="col-12 col-lg-6">
+    <h1 class="mb-3"><%= @user.username %>'S REVIEWS</h1>
+    <% if @user.reviews.empty? %>
+      <h1 class="text-center">This user has not submitted any reviews.</h1>
+    <% else %>
+      <% @user.reviews.each do |review| %>
+        <%= render "shared/review-card", review: review %>
+        <% end %>
+      <% end %>
+  </div>
 </div>

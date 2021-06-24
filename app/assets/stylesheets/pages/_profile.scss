@@ -1,23 +1,9 @@
 .profile-container {
   display: flex;
-  margin: 0 auto;
+  flex-direction: column;
 }
 
 .profile-avatar {
     width: 300px;
     border-radius: 50%;
-}
-
-.name {
-  flex: 1;
-  background: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.description {
-  flex: 4;
-  background: white;
-  border: none;
-  border-radius: 5px;
 }

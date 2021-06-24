@@ -34,26 +34,11 @@ body {
   display: flex;
   width: 75%;
   margin: 0 auto;
-  margin-bottom: 50px;
 }
 
-.cards {
-  flex: 4;
-}
-
-.cards h1 {
+.content-container h1 {
   border-bottom: 3px solid $orange-shade;
   display: inline-block;
   margin-bottom: 15px;
 }
 
-.reviews {
-  flex: 2;
-  margin-left: 20px;
-}
-
-.reviews h1 {
-  border-bottom: 3px solid $orange-shade;
-  display: inline-block;
-  margin-bottom: 15px;
-}
