@@ -39,11 +39,9 @@
     </div>
     <!-- Right side section -->
     <div class="col-12 col-lg-6 box">
-      <div class="d-flex flex-row justify-content-between"><h1><%= @stall.name.upcase %></h1><%= rails_social_share_button_tag %></div>
+      <h1><%= @stall.name.upcase %></h1>
       <h2>General information</h2>
       <p><%= @stall.description %></p>
-      <h2>Address</h2>
-      <p> <%=@stall.address%> <p>
       <h2>Category</h2>
       <p> <%=@stall.category%> <p>
       <h2>Services</h2>
@@ -60,7 +58,9 @@
           <% end %>
         </div>
       <% end %>
-      <div class="line"></div>
+      <h2>Address</h2>
+      <p> <%=@stall.address%> <p>
+      <div class="d-flex flex-row justify-content-center"><%= rails_social_share_button_tag %></div>
     </div>
   </div>
 
