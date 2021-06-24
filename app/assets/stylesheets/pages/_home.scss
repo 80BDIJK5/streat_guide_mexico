@@ -1,17 +1,17 @@
 // Specific CSS for your home-page
 h1 {
   font-size: 22px;
-  color: #3d3d3d;
+  color: $dark-gray;
 }
 
 h2 {
   font-size: 20px;
-  color: #3d3d3d;
+  color: $dark-gray;
 }
 
 p {
   font-size: 14px;
-  color: #3d3d3d;
+  color: $dark-gray;
 }
 
 main {
@@ -41,7 +41,19 @@ body {
   flex: 4;
 }
 
+.cards h1 {
+  border-bottom: 3px solid $orange-shade;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
 .reviews {
   flex: 2;
   margin-left: 20px;
+}
+
+.reviews h1 {
+  border-bottom: 3px solid $orange-shade;
+  display: inline-block;
+  margin-bottom: 15px;
 }

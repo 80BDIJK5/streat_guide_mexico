@@ -1,7 +1,6 @@
 <div class="show-container">
   <div class="row">
     <div class="col-6 box">
-      <h1 class="section-headers text-center mt-5">Recent photos</h1>
       <% imgCount = @stall.photos_aggregation.count %>
       <% if @stall.photos_aggregation.count == 0 %>
         <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg", style="object-fit: contain; height: 400px;" />
@@ -36,38 +35,30 @@
         </div>
       <% end %>
       <div>
-        <div class="text-center mt-3"><%= rails_social_share_button_tag %>
-        </div>
-      </div>
+    </div>
     </div>
     <!-- Right side section -->
     <div class="col-6 box">
-      <h1 class="section-headers text-center mt-5"> <%= @stall.name %></h1>
+      <div class="d-flex flex-row justify-content-between"><h1><%= @stall.name.upcase %></h1><%= rails_social_share_button_tag %></div>
       <h2>General information</h2>
       <p><%= @stall.description %></p>
       <h2>Address</h2>
       <p> <%=@stall.address%> <p>
       <h2>Services</h2>
       <% if @stall.services.nil? %>
-        <p><span class="fas fa-check-circle mr-1"></span>Spanish/English</p>
-        <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
-        <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
+        <div class="d-flex flex-row justify-content-between">
+          <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
+          <p><span class="fas fa-check-circle mr-1"></span>Best experience</p>
+          <p><span class="fas fa-check-circle mr-1"></span>Debit/Credit cards</p>
+        </div>
       <% else %>
-        <% @stall.services.drop(1).each do |service| %>
-          <p><span class="fas fa-check-circle mr-1"></span><%= service %></p>
-        <% end %>
-      <% end %>
-      <div id= "buttons" class="d-flex mt-3 flex-row justify-content-around align-items-center">
-        <div class="mt-2">
-          <% if user_signed_in? %>
-            <button type="button" class="btn btn-main" data-toggle="modal" data-target="#reviewBackdrop">Leave a review<i class="ml-1 fas fa-comment"></i></button>
-          <% else %>
-          <%= link_to new_user_session_path do %>
-            <button type="button" class="btn btn-main">Leave a review<i class="ml-1 fas fa-comment"></i></button>
-          <% end %>
+        <div class="d-flex flex-row justify-content-left">
+          <% @stall.services.drop(1).each do |service| %>
+            <p class="mr-3"><span class="fas fa-check-circle mr-1"></span><%= service %></p>
           <% end %>
         </div>
-      </div>
+      <% end %>
+      <div class="line"></div>
     </div>
   </div>
 
@@ -76,7 +67,6 @@
 
   <div class="row">
     <div class="col-6 box">
-      <h1 class="section-headers text-center mt-5">How to get there? </h1>
       <div class="map-image mapboxgl-canvas-show">
         <div id="map"
           style="width: 100x; height: 300px;"
@@ -87,10 +77,22 @@
       <div class="col-6 box">
       <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
       <% if @stall.reviews.empty? %>
-        <h1 class="section-headers text-center mt-5">Reviews</h1>
+        <div class="d-flex flex-row justify-content-between"><h1>REVIEWS</h1> <% if user_signed_in? %>
+            <button type="button" class="btn btn-review mb-3" data-toggle="modal" data-target="#reviewBackdrop"><i class="fas fa-plus-circle mr-1"></i>REVIEW</button>
+          <% else %>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-review mb-3"><i class="fas fa-plus-circle mr-1"></i>REVIEW</button>
+          <% end %>
+          <% end %></div>
         <p>This place has no reviews yet. Be the first to leave a review!</p>
       <% else %>
-        <h1 class="section-headers text-center mt-5">Reviews</h1>
+        <div class="d-flex flex-row justify-content-between"><h1>REVIEWS</h1> <% if user_signed_in? %>
+            <button type="button" class="btn btn-review mb-3" data-toggle="modal" data-target="#reviewBackdrop"><i class="fas fa-plus-circle mr-1"></i>REVIEW</button>
+          <% else %>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-review mb-3"><i class="fas fa-plus-circle mr-1"></i>REVIEW</button>
+          <% end %>
+          <% end %></div>
         <% @stall.reviews.each do |review| %>
           <%= render 'shared/review-card-show', review: review %>
           <%= render 'shared/photo-modal', review: review %>

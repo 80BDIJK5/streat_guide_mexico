@@ -2,7 +2,7 @@
 
 <div class="content-container">
   <div class="cards mt-3">
-    <h1>Trending today</h1>
+    <h1>TRENDING TODAY</h1>
     <div class="card-container">
       <% Stall.all.last(2).each do |stall| %>
       <%= render "shared/stallcard-with-limit", stall: stall %>
@@ -15,7 +15,7 @@
     </div>
   </div>
   <div class="reviews mt-3">
-    <h1>Latest reviews</h1>
+    <h1>LATEST REVIEWS</h1>
     <% @reviews.each do |review| %>
       <%= render "shared/review-card", review: review %>
     <% end %>
