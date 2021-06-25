@@ -2,25 +2,19 @@
   <div class="row my-5">
     <div class="col-12 col-lg-6 box">
       <% imgCount = @stall.photos_aggregation.count %>
-      <% if @stall.photos_aggregation.count == 0 %>
+      <% if imgCount == 0 %>
         <img src="https://st.depositphotos.com/3097111/4720/v/950/depositphotos_47208671-stock-illustration-photo-coming-soon-image-vector.jpg", style="object-fit: contain; height: 400px;" />
-      <% end %>
-                <!-- Insert Bootstrap for image carousel here -->
-                <!-- Iterate through each image and add them to a carousel view -->
-      <% if imgCount != 0 %>
+      <% else %>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <% @stall.photos_aggregation.each_with_index do |image, index | %>
+              <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= "active" if index == 0  %>"></li>
+            <% end %>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @stall.photos_aggregation.last.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: auto;'%>
-            </div>
-            <% @stall.photos_aggregation.each do |image | %>
-            <div class="carousel-item">
-              <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: contain; height: auto;'%>
+           <% @stall.photos_aggregation.each_with_index do |image, index | %>
+            <div class="carousel-item <%= "active" if index == 0  %>" style="height: 400px">
+              <%= cl_image_tag image.key, crop: :fill, class: 'd-block w-100', style: 'object-fit: cover; height: 100%;'%>
             </div>
             <% end %>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
