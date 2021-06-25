@@ -1,0 +1,22 @@
+.share {
+	width: 100%;
+  text-align: left;
+}
+
+.share a {
+	display: inline-block;
+  font-size: 20px;
+  color: $dark-gray;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+}
+
+.share a:hover {
+	opacity: 1;
+}
+
+.share i {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
