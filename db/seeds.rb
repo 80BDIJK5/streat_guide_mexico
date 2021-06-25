@@ -90,7 +90,7 @@ require "open-uri"
   stall1.photos.attach(io: file, filename: 'nes.jpeg', content_type: 'image/jpeg')
   stall1.save!
   file.close
-    
+
     review1 = Review.create(
        title: "We just got carryout...",
        comment: "We just got carryout from here and it was great! The cashier was really friendly and gave us good recommendations and a free sample of soup.It is pretty affordable and you get really large portions. I would recommend this for a good dinner!",
@@ -225,7 +225,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Frente Metro Nopalera, Av. Tlahuac 6023, Tláhuac, 13300 Ciudad de México, Mexico"
+    address: "Av. Paseo de la Reforma 500, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall7.services = []
@@ -257,7 +257,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Perif. Blvd. Manuel Ávila Camacho 5, Lomas de Sotelo, 53390 Ciudad de México, Méx., Mexico"
+    address: "Londres 247, Del Carmen, Coyoacán, 04100 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall8.services = []
@@ -279,7 +279,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Av. 1o. de Mayo s/n, Fraccionamiento Las Americas, Las Américas, 55076 Ciudad de México, Méx., Mexico"
+    address: "Av. Paseo de la Reforma 200, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall9.services = []
@@ -301,7 +301,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Carr. Federal Pachuca - Mexico 3450, Sierra Hermosa, 55749 Ojo de Agua, Méx., Mexico"
+    address: "Av. Paseo de la Reforma 250, Juárez, Cuauhtémoc, 06600"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall10.services = []
@@ -323,7 +323,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Av. Chalma Esq. Autopista México-Quéretaro Lote 8 Col, Autopista Querétaro - México, Jardines de la Hacienda, 54700 Cuautitlán Izcalli, Méx., Mexico"
+    address: "Av. Paseo de la Reforma 310, Juárez, Cuauhtémoc, 06600"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall11.services = []
@@ -367,7 +367,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Ignacio Allende 3, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06010 Ciudad de México, CDMX, Mexico"
+    address: "Av. Paseo de la Reforma 316, Juárez, Cuauhtémoc, 06600"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall13.services = []
@@ -404,7 +404,7 @@ require "open-uri"
     # category: "Tacos", "Quesadilla", "Burritos", "Chorizos", "Exotic",
     category: "Gorditas",
     description: "Gorditas? Welcome! The food you tasted in your dreams becomes a reality, right in the heart of cultural disctrict in the Heart of Mexico. The price is absolutely unbeatable, and the experience is worth sharing with friends.",
-    address: "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX, Mexico"
+    address: "Av Nuevo León 64, Hipódromo, Cuauhtémoc, 06100 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall15.services = []
@@ -424,7 +424,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Fray Juan de Zumárraga No. 2, Villa Gustavo A. Madero, Gustavo A. Madero, 07050 Ciudad de México, CDMX, Mexico"
+    address: "Calle Río Lerma 179, Cuauhtémoc, 06500 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall16.services = []
@@ -445,7 +445,7 @@ require "open-uri"
                   techniques are blended with science to coax out the most wonderful
                   flavours in the boldest of dishes. We guarantee that your experience
                    will be unforgettable",
-    address: "Av. Isaac Newton 55, Polanco, Polanco IV Secc, Miguel Hidalgo, 11560 Ciudad de México, CDMX, Mexico"
+    address: "Calle Amado Nervo 3, Sta María la Ribera, Cuauhtémoc, 06400 Ciudad de México, CDMX, Mexico"
     )
 #  stall1.services += ["Drinks", "Seating",  "Vegetarian", "Hygiene", "Takeout", "CardPayment",  "Wifi"]
   stall17.services = []
@@ -500,7 +500,7 @@ require "open-uri"
     rating: 4,
     # category: "Tacos", "Quesadilla", "Burritos", "Chorizos", "Exotic",
     category: "Tacos",
-    description: "Mexico city has an abundance of great food stalls, and El Cardenal is one of them. Very Generous portions filled with amazing 
+    description: "Mexico city has an abundance of great food stalls, and El Cardenal is one of them. Very Generous portions filled with amazing
                   flavours in every bite. You will be able to choose from a variety of home-made dishes that locals can't stop vist.  We highly recommend that you include this place in your to-try list.",
     address: "Av. Paseo de la Reforma 276, Juárez, Cuauhtémoc, 06600"
     )
