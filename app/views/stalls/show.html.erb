@@ -55,9 +55,10 @@
       <h2>Address</h2>
       <p> <%=@stall.address%> <p>
       <div class="share">
-        <a href="https://www.facebook.com/share.php?u=https://www.streatguidemexico.com/stalls/#{@stall.id}&title=#{@stall.title}" target="blank"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://twitter.com/intent/tweet?status=#{stall.title}+https://www.streatguidemexico.com/stalls/#{stall.id}" target="blank"><i class="fab fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.streatguidemexico.com/stalls/#{stall.id}&title=#{stall.title}&source={{source}}" target="blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/share.php?u=https://www.streatguidemexico.com/stalls/<%= @stall.id %>/&title=<%= @stall.name %>" target="blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/intent/tweet?status=<%= @stall.name %>+https://www.streatguidemexico.com/stalls/<%= @stall.id %>/" target="blank"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.streatguidemexico.com/stalls/<%= @stall.id %>&title=<%= @stall.name %>&source=https://www.streatguidemexico.com" target="blank"><i class="fab fa-linkedin"></i></a>
+
       </div>
     </div>
   </div>
