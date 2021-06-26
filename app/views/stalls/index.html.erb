@@ -14,7 +14,7 @@
     <div class="col-12 col-lg-6">
       <div class="card-container-index" >
           <% @stalls.last(6).each do |stall| %>
-          <%= render partial: "shared/stallcard", locals: {stall: stall} %>
+          <%= render partial: "shared/stallcard-with-limit", locals: {stall: stall} %>
         <% end %>
       </div>
     </div>
