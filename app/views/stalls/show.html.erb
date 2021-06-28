@@ -32,7 +32,7 @@
     </div>
     </div>
     <!-- Right side section -->
-    <div class="col-12 col-lg-6 box">
+    <div class="col-12 mt-3 col-lg-6 mt-lg-0 box">
       <h1><%= @stall.name.upcase %></h1>
       <h2>General information</h2>
       <p><%= @stall.description %></p>
@@ -73,7 +73,7 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
       </div>
-      <div class="col-12 col-lg-6 box">
+      <div class="col-12 mt-3 col-lg-6 mt-lg-0 box">
       <!-- Once Leave a Review is clicked, the following code needs to be executed withing div "insert-here" -->
       <% if @stall.reviews.empty? %>
         <div class="d-flex flex-row justify-content-between"><h1>REVIEWS</h1> <% if user_signed_in? %>
