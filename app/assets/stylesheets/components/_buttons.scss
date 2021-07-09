@@ -1,6 +1,7 @@
 .btn-main {
   color: $light-gray;
   padding: 8px 24px;
+  font-size: 14px;
   background: $mexico-green;
   font-weight: bold;
   transition: background 0.3s ease;
@@ -15,6 +16,7 @@
 .btn-review {
   color: $light-gray;
   padding: 8px 8px;
+  font-size: 14px;
   background: $orange;
   font-weight: bold;
   transition: background 0.3s ease;
@@ -29,6 +31,7 @@
 .btn-second {
   color: $light-gray;
   padding: 8px 24px;
+  font-size: 14px;
   background: #5C5C5C;
   font-weight: bold;
   transition: background 0.3s ease;
@@ -43,6 +46,7 @@
 
 .btn-login {
   color: $light-gray;
+  font-size: 14px;
   padding: 8px;
   background: $orange;
   font-weight: bold;
@@ -58,14 +62,20 @@
 .nav-button {
   background: none;
   border: none;
+  font-size: 14px;
   color: $light-gray;
   font-weight: bold;
   padding: 8px;
 }
 
+.nav-link {
+  font-size: 14px;
+}
+
 
 .upload-photo {
   padding: 8px 24px;
+  font-size: 14px;
   cursor: pointer;
   font-weight: bold;
   color: $light-gray;
